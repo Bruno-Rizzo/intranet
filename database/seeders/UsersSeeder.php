@@ -19,7 +19,7 @@ class UsersSeeder extends Seeder
         User::create([
             'name'              => 'Bruno Rizzo',
             'email'             => '50008382@ssispen',
-            'password'          => bcrypt('brizzo25'),
+            'password'          => bcrypt('password'),
             'image'             => 'profile.jpg',
             'role_id'           => Role::create(['name' => 'Administrador'])->id,
             'email_verified_at' => now(),
@@ -31,7 +31,7 @@ class UsersSeeder extends Seeder
             'email'             => '50212419@ssispen',
             'password'          => bcrypt('password'),
             'image'             => 'profile.jpg',
-            'role_id'           => Role::create(['name' => 'Master'])->id,
+            'role_id'           => 1,
             'email_verified_at' => now(),
             'created_at'        => now(),
             'updated_at'        => now(),

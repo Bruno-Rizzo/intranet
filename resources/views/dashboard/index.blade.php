@@ -18,10 +18,12 @@
                         <div class="card-header">
                             <span style="font-size: 18px"><b>Dashboard</b></span>
                             <i class=" ri-git-commit-line" style="vertical-align: middle"></i>
-                            <span style="font-size: 14px">Sistema de Inteligência Penitenciária</span>
+                            <span style="font-size: 14px">{{Auth::user()->role->name}}</span>
                         </div>
 
                         <div class="card-body">
+
+                            @can('view', App\Models\Helpdesk::class)
 
                             <div class="row">
                                 <div class="col-xl-3 col-md-6">
@@ -35,10 +37,10 @@
                                                 </div>
                                                 <div class="avatar-sm">
                                                     <span class="avatar-title bg-light text-primary rounded-3">
-                                                        <i class="ri-volume-up-fill font-size-24"></i>  
+                                                        <i class="ri-volume-up-fill font-size-24"></i>
                                                     </span>
                                                 </div>
-                                            </div>                                            
+                                            </div>
                                         </div><!-- end cardbody -->
                                     </div><!-- end card -->
                                 </div><!-- end col -->
@@ -53,10 +55,10 @@
                                                 </div>
                                                 <div class="avatar-sm">
                                                     <span class="avatar-title bg-light text-danger rounded-3">
-                                                        <i class="ri-spam-2-fill font-size-24"></i>  
+                                                        <i class="ri-spam-2-fill font-size-24"></i>
                                                     </span>
                                                 </div>
-                                            </div>                                              
+                                            </div>
                                         </div><!-- end cardbody -->
                                     </div><!-- end card -->
                                 </div><!-- end col -->
@@ -71,13 +73,21 @@
                                                 </div>
                                                 <div class="avatar-sm">
                                                     <span class="avatar-title bg-light text-success rounded-3">
-                                                        <i class=" ri-checkbox-circle-fill font-size-24"></i>  
+                                                        <i class=" ri-checkbox-circle-fill font-size-24"></i>
                                                     </span>
                                                 </div>
-                                            </div>                                              
+                                            </div>
                                         </div><!-- end cardbody -->
                                     </div><!-- end card -->
                                 </div><!-- end col -->
+                            </div><!-- end row -->
+
+                            @endcan
+
+                            <div class="row">
+
+                                <p>Bem vindo ao Sistema de Inteligência Penitenciária</p>
+
                             </div><!-- end row -->
 
                         </div>

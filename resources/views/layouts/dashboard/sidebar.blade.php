@@ -17,12 +17,16 @@
                     </a>
                 </li>
 
+                @can('view', App\Models\Helpdesk::class)
+
                 <li>
                     <a href="{{ route('helpdesk.index') }}" class="waves-effect">
                         <i class="ri-computer-line"></i>
                         <span>Helpdesk</span>
                     </a>
                 </li>
+
+                @endcan
 
                 @can('admin')
 

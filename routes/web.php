@@ -11,6 +11,8 @@ use App\Models\Helpdesk;
 use Illuminate\Support\Facades\Route;
 
 
+/* =============================== ROTAS DA INTRANET ===================================== */
+
 Route::controller(SiteController::class)->group(function(){
     Route::get('/',         'index')    ->name('home');
     Route::get('/links',    'links')    ->name('site.links');
@@ -21,10 +23,21 @@ Route::controller(SiteController::class)->group(function(){
 Route::post('/helpdesk', [HelpdeskController::class, 'store'])->name('helpdesk.store');
 
 
+/* ========================================================================================= */
+
+
+
+
+/* ================================ ROTAS DO DASHBOARD ===================================== */
+
+
 Route::middleware('auth')->group(function(){
 
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
-    
+
+
+    /* =========================== ROTAS DE ADMINISTRADOR ================================== */
+
     Route::middleware('admin')->group(function(){
 
         Route::controller(UserController::class)->group(function(){
@@ -52,27 +65,41 @@ Route::middleware('auth')->group(function(){
             Route::post('/roles/{role}/permissions/', 'assignPermission') ->name('roles.permissions');
         });
 
-        Route::controller(HelpdeskController::class)->group(function(){
-            Route::get('/helpdesk/list',            'index')   ->name('helpdesk.index');
-            Route::get('/helpdesk/{helpdesk}/edit', 'edit')    ->name('helpdesk.edit');
-            Route::put('/helpdesk/{helpdesk}',      'update')  ->name('helpdesk.update');
-            Route::get('/helpdesk/confirm/{id}',    'confirm') ->name('helpdesk.confirm');
-            Route::get('/helpdesk/delete/{id}',     'delete')  ->name('helpdesk.delete');
-        });
-        
     });
+
+    // =====================================================================================================
+
+
+    /* ===================================== ROTAS HELPDESK ================================================ */
+
+    Route::controller(HelpdeskController::class)->group(function(){
+        Route::get('/helpdesk/list',            'index')   ->name('helpdesk.index');
+        Route::get('/helpdesk/{helpdesk}/edit', 'edit')    ->name('helpdesk.edit');
+        Route::put('/helpdesk/{helpdesk}',      'update')  ->name('helpdesk.update');
+        Route::get('/helpdesk/confirm/{id}',    'confirm') ->name('helpdesk.confirm');
+        Route::get('/helpdesk/delete/{id}',     'delete')  ->name('helpdesk.delete');
+    });
+
+    // =====================================================================================================
+
+
+
+    /* ================================= ROTAS DE PERFIL DE USUÁRIO ======================================== */
 
     Route::controller(ProfileController::class)->group(function(){
         Route::get('/profile' ,                 'index')          ->name('profile.index');
         Route::put('/profile/{user}' ,          'update')         ->name('profile.update');
         Route::get('/profile/password' ,        'password')       ->name('profile.password');
         Route::put('/profile/password/{user}' , 'updatePassword') ->name('profile.update.password');
-        // Route::get('/profile/search',           'search')         ->name('profile.search');
     });
 
-    Route::get('/images', ImageUpload::class); 
-    
+    // ==========================================================================================================
+
+
+
 });
+
+// ===============================================================================================================
 
 require __DIR__.'/auth.php';
 

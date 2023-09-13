@@ -20,23 +20,10 @@ class ProfileController extends Controller
     {
         $request->validate([
             'name'  => ['required', 'min:3'],
-            'email' => ['required', 'email', Rule::unique('users')->ignore($user)],
-            'image' => 'image'
-        ], [
-            'image.image'  => 'O campo Imagem deve ser uma imagem',
-            'email.unique' => 'Este email já esta sendo utilizado',
+            'email' => ['required', 'email', Rule::unique('users')->ignore($user)]
         ]);
 
         $profile = $request->except('_token');
-
-        if ($request->image) {
-
-            $file =  $request->image;
-
-            $filename = date('dmYHi') . $request->image->getClientOriginalName();
-            $file->move(public_path('backend/assets/avatars'), $filename);
-            $profile['image'] = $filename;
-        }
 
         User::find(Auth::id())->update($profile);
         Alert::toast('Perfil editado com sucesso!', 'success');
@@ -67,7 +54,7 @@ class ProfileController extends Controller
 
             Alert::toast('Senha alterada!', 'success');
             return to_route('profile.password');
-            
+
         } else {
 
             Alert::toast('Senha Incorreta!', 'error');
@@ -75,8 +62,4 @@ class ProfileController extends Controller
         }
     }
 
-    // public function search()
-    // {
-    //     return view('dashboard.users.search');
-    // }
 }

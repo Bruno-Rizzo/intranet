@@ -10,6 +10,7 @@ class HelpdeskController extends Controller
 {
     public function index()
     {
+        $this->authorize('view', App\Models\Helpdesk::class);
         $calls = Helpdesk::where('status',0)->get();
         return view('dashboard.helpdesk.index', compact('calls'));
     }

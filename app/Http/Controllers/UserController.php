@@ -10,21 +10,21 @@ use RealRashid\SweetAlert\Facades\Alert;
 
 class UserController extends Controller
 {
-   
+
     public function index()
     {
         $users = User::all();
         return view('dashboard.users.index', compact('users'));
-        
+
     }
-    
+
     public function create()
     {
         $roles = Role::orderBy('name')->get();
         return view('dashboard.users.create', compact('roles'));
     }
 
-   
+
     public function store(Request $request)
     {
         $validated = $request->validate([
@@ -44,14 +44,14 @@ class UserController extends Controller
 
     }
 
-    
+
     public function edit(User $user)
     {
         $roles = Role::all();
         return view('dashboard.users.edit', compact('user','roles'));
     }
 
-    
+
     public function update(Request $request, User $user)
     {
         $validated = $request->validate([
@@ -110,7 +110,7 @@ class UserController extends Controller
         ]);
 
         $validated['password'] = bcrypt($request->password);
-        
+
         User::find($user->id)->update($validated);
         Alert::toast('Senha alterada!', 'success');
         return to_route('users.index');
