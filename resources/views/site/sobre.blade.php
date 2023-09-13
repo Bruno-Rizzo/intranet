@@ -84,7 +84,7 @@
 
                             <div class="media text-muted mt-3">
                                 <p class="pb-3 border-bottom border-gray">
-                                    <strong class="d-block" style="font-size: 14px">POLÍTICA DA SISPEN</strong>
+                                    <strong class="d-block" style="font-size: 14px">POLÍTICA DA SSISPEN</strong>
                                     Desenvolver continuamente as melhores práticas de gestão de produção de conhecimento,
                                     para que
                                     se cumpra sua missão e se alcance a visão estaber.
