@@ -21,8 +21,8 @@ class SiteController extends Controller
 
     public function helpdesk()
     {
-        $divisions = Division::all();
-        $troubles  = Trouble::all();
+        $divisions = Division::all()->sortBy('name');
+        $troubles  = Trouble::all()->sortBy('name');
         return view('site.helpdesk', compact('divisions','troubles'));
     }
 

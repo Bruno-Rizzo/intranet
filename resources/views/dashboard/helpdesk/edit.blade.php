@@ -14,7 +14,7 @@
 
                 <div class="col-12">
 
-                    
+
 
                     <form action="{{route('helpdesk.update', $call->id)}}" method="post">
                         @method('PUT')
@@ -31,35 +31,42 @@
                             <div class="card-body">
 
                                 <div class="row mb-3">
-                                    <label class="col-sm-1 col-form-label">Nome</label>
+                                    <label class="col-sm-1 col-form-label">Nome:</label>
                                     <div class="col-sm-6 mt-2">
                                         {{$call->name}}
                                     </div>
                                 </div>
 
                                 <div class="row mb-3">
-                                    <label class="col-sm-1 col-form-label">Whatsapp</label>
+                                    <label class="col-sm-1 col-form-label">Whatsapp:</label>
                                     <div class="col-sm-6 mt-2">
                                         {{$call->whatsapp}}
                                     </div>
                                 </div>
 
                                 <div class="row mb-3">
-                                    <label class="col-sm-1 col-form-label">Divisão</label>
+                                    <label class="col-sm-1 col-form-label">Divisão:</label>
                                     <div class="col-sm-6 mt-2">
                                         {{$call->division->name}}
                                     </div>
                                 </div>
 
                                 <div class="row mb-3">
-                                    <label class="col-sm-1 col-form-label">Problema</label>
+                                    <label class="col-sm-1 col-form-label">Data:</label>
+                                    <div class="col-sm-6 mt-2">
+                                        {{$call->created_at->format('d/m/y - H:i').' hs'}}
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <label class="col-sm-1 col-form-label">Problema:</label>
                                     <div class="col-sm-6 mt-2">
                                         {{$call->trouble->name}}
                                     </div>
                                 </div>
 
                                 <div class="row mb-3">
-                                    <label class="col-sm-1 col-form-label">Descrição</label>
+                                    <label class="col-sm-1 col-form-label">Descrição:</label>
                                     <div class="col-sm-4 mt-2">
                                         {{$call->description}}
                                     </div>
@@ -83,12 +90,12 @@
 
 
 
-                </div> 
+                </div>
 
-            </div> 
+            </div>
 
-        </div> 
+        </div>
 
     </div>
-    
+
 @endsection

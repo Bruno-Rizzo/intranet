@@ -7,11 +7,13 @@ use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
 {
-    
+
     public function run()
     {
         $this->call([
-            AuxiliaryTables::class,
+            DivisionsSeeder::class,
+            TroublesSeeder::class,
+            AddTroublesSeeder::class,
             PermissionsSeeder::class,
             UsersSeeder::class,
             AssiginPermissionsSeeder::class,

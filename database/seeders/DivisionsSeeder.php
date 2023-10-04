@@ -2,16 +2,15 @@
 
 namespace Database\Seeders;
 
-use App\Models\Division;
-use App\Models\Trouble;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\Division;
 
-class AuxiliaryTables extends Seeder
+class DivisionsSeeder extends Seeder
 {
-    
     public function run()
     {
+
         Division::create(['name' => 'Assessoria de Suporte Técnico']);
         Division::create(['name' => 'Assessoria Especial de Inteligência']);
         Division::create(['name' => 'Divisão Administrativa']);
@@ -28,20 +27,9 @@ class AuxiliaryTables extends Seeder
         Division::create(['name' => 'Núcleo de Inteligência do Sul Fluminense']);
         Division::create(['name' => 'Serviço de Pesquisa e Acompanhamento Processual']);
         Division::create(['name' => 'Superintendência de Ações Especializadas']);
-        Division::create(['name' => 'Superintendência de Contrainteligência']); 
-        Division::create(['name' => 'Superintendência de Inteligência']); 
-        Division::create(['name' => 'Superintendência de Inteligência Eletrônica']); 
-        Division::create(['name' => 'Superintendência de Recaptura']); 
+        Division::create(['name' => 'Superintendência de Contrainteligência']);
+        Division::create(['name' => 'Superintendência de Inteligência']);
+        Division::create(['name' => 'Superintendência de Inteligência Eletrônica']);
 
-        Trouble::create(['name' => 'Dificuldade com Impressão']);
-        Trouble::create(['name' => 'Dificuldade com Scanner']);
-        Trouble::create(['name' => 'Dúvida Sobre Algum Assunto Relacionado à TI']);
-        Trouble::create(['name' => 'Mudar Equipamento de Sala ou de Local']);
-        Trouble::create(['name' => 'Necessita de Senha de Acesso para Algum Sistema']);
-        Trouble::create(['name' => 'Necessita de Visita Técnica para Alguma Aprovação']);
-        Trouble::create(['name' => 'Necessita Instalar algum Hardware (impressora, monitor, switch, etc)']);
-        Trouble::create(['name' => 'Necessita Instalar algum Software / Aplicativo']);
-        Trouble::create(['name' => 'Problemas com Hardware (computador, Monitor, teclado, mouse, etc)']);
-        Trouble::create(['name' => 'Sem Acesso à Internet / VPN']);
     }
 }
