@@ -14,4 +14,9 @@ class Division extends Model
     {
        return $this->hasMany(Helpdesk::class);
     }
+
+    public function qrcodes()
+    {
+       return $this->hasMany(QrCode::class);
+    }
 }

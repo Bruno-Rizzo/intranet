@@ -3,7 +3,7 @@
     <div data-simplebar class="h-100">
 
         <div id="sidebar-menu">
-            
+
             <ul class="metismenu list-unstyled" id="side-menu">
                 <li class="menu-title">Menu</li>
 
@@ -29,6 +29,13 @@
                 </li>
 
                 <li>
+                    <a href="{{route('qrcode.index')}}" class="waves-effect">
+                        <i class=" ri-qr-code-line"></i>
+                        <span>Autenticador</span>
+                    </a>
+                </li>
+
+                <li>
                     <a href="{{route('site.sobre')}}" class="waves-effect">
                         <i class=" ri-information-line"></i>
                         <span>Sobre</span>
@@ -38,7 +45,7 @@
             </ul>
 
         </div>
-        
+
     </div>
 
 </div>
