@@ -140,7 +140,7 @@
                                         <span style="font-size:16px">Sistema Eletrônico de Informações - SEI</span>
                                     </td>
                                     <td class="text-end" style="vertical-align: middle">
-                                        <a href="https://sei.fazenda.rj.gov.br/" target="_blank"
+                                        <a href="https://sei.rj.gov.br/" target="_blank"
                                             class="btn btn-info btn-sm">
                                             <i class="far fa-hand-point-right me-1"></i> Acessar
                                         </a>
