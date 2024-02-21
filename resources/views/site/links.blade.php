@@ -86,6 +86,21 @@
 
                                 <tr>
                                     <td style="width:5%">
+                                        <img src="{{ asset('assets/images/links/rede.png') }}" height="45">
+                                    </td>
+                                    <td style="vertical-align: middle">
+                                        <span style="font-size:16px">Análise de Vínculos - Rede CNPJ</span>
+                                    </td>
+                                    <td class="text-end" style="vertical-align: middle">
+                                        <a href="http://10.9.44.8:5000/rede/"
+                                            target="_blank" class="btn btn-info btn-sm">
+                                            <i class="far fa-hand-point-right me-1"></i> Acessar
+                                        </a>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td style="width:5%">
                                         <img src="{{ asset('assets/images/links/sinespjus.png') }}" height="45">
                                     </td>
                                     <td style="vertical-align: middle">

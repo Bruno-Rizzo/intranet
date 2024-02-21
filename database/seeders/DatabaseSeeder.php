@@ -17,6 +17,10 @@ class DatabaseSeeder extends Seeder
             PermissionsSeeder::class,
             UsersSeeder::class,
             AssiginPermissionsSeeder::class,
+            MatrialSeeder::class,
+            MovementSeeder::class,
+            PositionSeeder::class,
+            TypeSeeder::class,
         ]);
     }
 }

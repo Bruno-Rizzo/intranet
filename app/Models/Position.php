@@ -5,20 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Division extends Model
+class Position extends Model
 {
     use HasFactory;
-    protected $fillable = ['name'];
 
-    public function helpdesks()
-    {
-       return $this->hasMany(Helpdesk::class);
-    }
-
-    public function qrcodes()
-    {
-       return $this->hasMany(QrCode::class);
-    }
+    protected $fillable=[
+        'name'
+    ];
 
     public function administratives()
     {
