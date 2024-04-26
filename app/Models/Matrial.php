@@ -17,4 +17,5 @@ class Matrial extends Model
     {
         return $this->hasMany(Administrative::class);
     }
+
 }

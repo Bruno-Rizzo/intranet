@@ -29,7 +29,6 @@
                 @endcan
 
                 @can('admin')
-
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class=" ri-user-settings-line"></i>
@@ -41,8 +40,31 @@
                         <li><a href="{{ route('users.find') }}">Senhas</a></li>
                     </ul>
                 </li>
-
                 @endcan
+
+                @can('view', App\Models\Seizure::class)
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="ri-shield-user-line"></i>
+                        <span>Apreensões</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        @can('create', App\Models\Seizure::class)
+                        <li><a href="{{route('seizure.index')}}">Cadastrar</a></li>
+                        @endcan
+                        @can('view', App\Models\Success::class)
+                        <li><a href="{{route('success.index')}}">Êxitos</a></li>
+                        @endcan
+                        @can('search', App\Models\Seizure::class)
+                        <li><a href="{{route('search.index')}}">Pesquisar</a></li>
+                        @endcan
+                        @can('export', App\Models\Seizure::class)
+                        <li><a href="{{route('statistic.index')}}">Exportar</a></li>
+                        @endcan
+                    </ul>
+                </li>
+                @endcan
+
 
                 <li>
                     <a href="{{ route('home') }}" class="waves-effect">

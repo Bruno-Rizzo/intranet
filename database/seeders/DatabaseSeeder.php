@@ -21,6 +21,12 @@ class DatabaseSeeder extends Seeder
             MovementSeeder::class,
             PositionSeeder::class,
             TypeSeeder::class,
+            RegimeSeeder::class,
+            CoordinationSeeder::class,
+            SectorSeeder::class,
+            FactionSeeder::class,
+            SeizureTypeSeeder::class,
+            PrisionalUnitySeeder::class,
         ]);
     }
 }

@@ -11,6 +11,7 @@ class HelpdeskController extends Controller
     public function index()
     {
         $this->authorize('view', App\Models\Helpdesk::class);
+
         $calls = Helpdesk::where('status',0)->get();
         return view('dashboard.helpdesk.index', compact('calls'));
     }
@@ -18,6 +19,7 @@ class HelpdeskController extends Controller
     public function edit(Helpdesk $helpdesk)
     {
         $this->authorize('view', App\Models\Helpdesk::class);
+
         $call = Helpdesk::find($helpdesk->id);
         return view('dashboard.helpdesk.edit', compact('call'));
     }
@@ -43,6 +45,7 @@ class HelpdeskController extends Controller
     public function update(Request $request, Helpdesk $helpdesk)
     {
         $this->authorize('update', App\Models\Helpdesk::class);
+
         $call = Helpdesk::find($helpdesk->id);
         $call->status = 1;
         $call->save();
@@ -63,6 +66,7 @@ class HelpdeskController extends Controller
     public function delete($id)
     {
         $this->authorize('delete', App\Models\Helpdesk::class);
+
         Helpdesk::find($id)->delete();
         Alert::toast('Chamado excluído!', 'error');
         return redirect()->back();
