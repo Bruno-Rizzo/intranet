@@ -51,8 +51,9 @@
                                         <th>Usuário</th>
                                         <th>Função</th>
                                         <th>Data de Cadastro</th>
+                                        <th class="text-center">Status</th>
                                         <th class="text-center">Editar</th>
-                                        <th class="text-center">Excluir</th>
+                                        {{-- <th class="text-center">Excluir</th> --}}
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -63,15 +64,22 @@
                                             <td>{{ $user->role->name }}</td>
                                             <td>{{ $user->created_at->format('d/m/Y') }}</td>
                                             <td class="text-center">
+                                                @if($user->status == 1)
+                                                <span class="badge rounded-pill bg-success">{{'Ativo'}}</span>
+                                                @else
+                                                <span class="badge rounded-pill bg-danger">{{'inativo'}}</span>
+                                                @endif
+                                            </td>
+                                            <td class="text-center">
                                                 <a href="{{ route('users.edit', $user->id) }}" class="text-success">
                                                     <i class="fa fa-edit"></i>
                                                 </a>
                                             </td>
-                                            <td class="text-center">
+                                            {{-- <td class="text-center">
                                                 <a href="{{ route('users.confirm', $user->id) }}" class="text-danger">
                                                     <i class="fa fa-trash"></i>
                                                 </a>
-                                            </td>
+                                            </td> --}}
                                         </tr>
                                     @endforeach
                             </table>

@@ -4,6 +4,12 @@
     SIP | Helpdesk
 @endsection
 
+@section('refresh')
+@can('view', App\Models\Helpdesk::class)
+    <meta http-equiv="refresh" content="300">
+@endcan
+@endsection
+
 @section('styles')
     <!-- DataTables -->
     <link href="{{ asset('assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css') }}" rel="stylesheet"
@@ -86,11 +92,11 @@
 
                     </div>
 
-                </div> 
+                </div>
 
-            </div> 
+            </div>
 
-        </div> 
+        </div>
 
     </div>
 

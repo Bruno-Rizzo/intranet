@@ -63,6 +63,17 @@
                                     </div>
                                 </div>
 
+                                <div class="row mb-3">
+                                    <label class="col-sm-1 col-form-label">Status</label>
+                                    <div class="col-sm-6">
+                                        <div class="form-check form-switch mb-3">
+                                            <input type="checkbox" class="form-check-input" id="{{$user->id}}"
+                                                   name="status" @checked($user->status==1)>
+                                            <label class="form-check-label"  for="{{$user->id}}" >Ativo</label>
+                                        </div>
+                                    </div>
+                                </div>
+
                             </div>
 
                             <div class="card-footer">
@@ -78,12 +89,12 @@
 
                     </form>
 
-                </div> 
+                </div>
 
-            </div> 
+            </div>
 
-        </div> 
+        </div>
 
     </div>
-    
+
 @endsection

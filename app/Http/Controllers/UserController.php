@@ -63,6 +63,8 @@ class UserController extends Controller
             'email.unique'     => 'Este email já está sendo utilizado'
         ]);
 
+        $request->status ? $validated['status'] = 1 : $validated['status'] = 0;
+
         User::find($user->id)->update($validated);
         Alert::toast('Usuário editado!', 'success');
         return to_route('users.index');
