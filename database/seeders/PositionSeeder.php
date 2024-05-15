@@ -14,6 +14,7 @@ class PositionSeeder extends Seeder
         Position::create(['name' => 'Acessor']);
         Position::create(['name' => 'Acessor Especial']);
         Position::create(['name' => 'Analista']);
+        Position::create(['name' => 'Chefe']);
         Position::create(['name' => 'Coordenador']);
         Position::create(['name' => 'Diretor']);
         Position::create(['name' => 'Escolta']);

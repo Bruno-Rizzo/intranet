@@ -35,7 +35,7 @@
                             <span style="font-size: 14px">Cadastro de Êxitos</span>
                         </div>
 
-                        <form action="" method="post">
+                        <form action="{{route('success.store')}}" method="post">
                             @csrf
 
                             <div class="card-body">

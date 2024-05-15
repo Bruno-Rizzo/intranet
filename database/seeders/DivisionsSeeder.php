@@ -18,6 +18,7 @@ class DivisionsSeeder extends Seeder
         Division::create(['name' => 'Divisão de Protocolo']);
         Division::create(['name' => 'Escola de Inteligência Penitenciária']);
         Division::create(['name' => 'Gabinete do Subsecretário']);
+        Division::create(['name' => 'Ministério Público (cedido)']);
         Division::create(['name' => 'Núcleo de Inteligência de Campos']);
         Division::create(['name' => 'Núcleo de Inteligência de Gericinó']);
         Division::create(['name' => 'Núcleo de Inteligência do Grande Rio']);

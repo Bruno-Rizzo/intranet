@@ -40,11 +40,11 @@
                             </div>
 
                             <div class="card-footer">
-                                <button type="submit" class="btn btn-sm btn-info">
-                                    <i class="fa fa-save me-1"></i> Cadastrar
+                                <button type="submit" class="btn btn-sm btn-info me-1">
+                                    <i class="fa fa-save"></i> Cadastrar
                                 </button>
-                                <a href="{{ route('roles.index') }}" class="btn btn-sm btn-primary">
-                                    <i class="fa fa-redo me-1"></i> Voltar
+                                <a href="{{ route('roles.index') }}" class="btn btn-sm btn-primary ms-1">
+                                    <i class="fa fa-redo"></i> Voltar
                                 </a>
                             </div>
 
@@ -52,12 +52,12 @@
 
                     </form>
 
-                </div> 
+                </div>
 
-            </div> 
+            </div>
 
-        </div> 
+        </div>
 
     </div>
-    
+
 @endsection

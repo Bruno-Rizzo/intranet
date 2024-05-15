@@ -12,8 +12,7 @@ class MovementSeeder extends Seeder
     public function run()
     {
         Movement::create(['name' => 'Ingresso']);
-        Movement::create(['name' => 'Reingresso']);
         Movement::create(['name' => 'Saída']);
-        Movement::create(['name' => 'Substituição']);
+        Movement::create(['name' => 'Função']);
     }
 }

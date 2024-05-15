@@ -11,26 +11,23 @@ return new class extends Migration
     {
         Schema::create('administratives', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('division_id')->constrained('divisions')->onDelete('cascade');
-            $table->foreignId('position_id')->constrained('positions')->onDelete('cascade');
-            $table->foreignId('matrial_id')->constrained('matrials')->onDelete('cascade');
             $table->string('name');
             $table->string('identify');
-            $table->string('photo');
+            $table->foreignId('division_id')->constrained('divisions')->onDelete('cascade');
+            $table->foreignId('position_id')->constrained('positions')->onDelete('cascade');
             $table->string('address');
-            $table->string('number');
             $table->string('complement');
-            $table->string('neighborhood');
             $table->string('county');
             $table->string('city');
-            $table->string('email');
             $table->string('phone');
+            $table->string('email');
             $table->string('cpf');
             $table->string('rg');
             $table->date('birth');
             $table->date('entry');
-            $table->text('observations');
-            $table->tinyInteger('status');
+            $table->foreignId('matrial_id')->constrained('matrials')->onDelete('cascade');
+            $table->text('observations')->nullable();
+            $table->boolean('status')->default(1);
             $table->timestamps();
         });
     }

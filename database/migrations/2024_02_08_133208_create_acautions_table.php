@@ -16,7 +16,8 @@ return new class extends Migration
             $table->string('brand');
             $table->string('model');
             $table->string('caliber');
-            $table->string('number');
+            $table->string('acaution_number')->nullable();
+            $table->string('gun_number');
             $table->timestamps();
         });
     }

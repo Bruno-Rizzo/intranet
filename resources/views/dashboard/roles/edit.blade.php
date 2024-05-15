@@ -52,7 +52,7 @@
 
                 </div>
 
-            </div> 
+            </div>
 
             <div class="row">
 
@@ -78,7 +78,7 @@
                                         @foreach ($permissions as $permission)
 
                                         <div class="col-sm-3 mb-3">
-                                        
+
                                             <div class="form-check form-switch mb-3">
                                                 <input type="checkbox" class="form-check-input" id="{{$permission->id}}"
                                                     name="permissions[]" value="{{$permission->id}}"
@@ -86,11 +86,11 @@
                                                     >
                                                 <label class="form-check-label"  for="{{$permission->id}}" >{{$permission->name}}</label>
                                             </div>
-                                        
+
                                         </div>
 
                                         @endforeach
-                              
+
                                     </div>
 
                                 </div>
@@ -98,11 +98,11 @@
                             </div>
 
                             <div class="card-footer">
-                                <button type="submit" class="btn btn-sm btn-info">
-                                    <i class=" fas fa-sync-alt me-1"></i> Associar
+                                <button type="submit" class="btn btn-sm btn-info me-1">
+                                    <i class=" fas fa-sync-alt"></i> Associar
                                 </button>
-                                <a href="{{ route('roles.index') }}" class="btn btn-sm btn-primary">
-                                    <i class="fa fa-redo me-1"></i> Voltar
+                                <a href="{{ route('roles.index') }}" class="btn btn-sm btn-primary ms-1">
+                                    <i class="fa fa-redo"></i> Voltar
                                 </a>
                             </div>
 
@@ -110,12 +110,12 @@
 
                     </form>
 
-                </div> 
+                </div>
 
-            </div> 
+            </div>
 
-        </div> 
+        </div>
 
     </div>
-    
+
 @endsection

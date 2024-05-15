@@ -15,7 +15,8 @@ class Acaution extends Model
         'brand',
         'model',
         'caliber',
-        'number'
+        'acaution_number',
+        'gun_number',
     ];
 
     public function administrative()

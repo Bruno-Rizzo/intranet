@@ -11,8 +11,8 @@ use App\Http\Controllers\SeizureController;
 use App\Http\Controllers\SuccessController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\StatisticController;
-use App\Http\Livewire\ImageUpload;
-use App\Models\Helpdesk;
+use App\Http\Controllers\AdministrativeController;
+use App\Http\Controllers\ReportController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -121,8 +121,8 @@ Route::middleware('auth')->group(function(){
     /* =================================== ROTAS DE PESQUISAS DE APREENSÕES =========================================== */
 
     Route::controller(SearchController::class)->group(function(){
-        Route::get('/search',  'index') ->name('search.index');
-        Route::post('/search', 'result')->name('search.result');
+        Route::get('/seizure/search',  'index') ->name('search.index');
+        Route::post('/seizure/search', 'result')->name('search.result');
     });
 
 
@@ -135,6 +135,38 @@ Route::middleware('auth')->group(function(){
         Route::post('/statistic/success', 'success_export')->name('statistic.success');
     });
 
+
+
+     /* =========================================== ROTAS ADMINISTRATIVO =================================================== */
+
+     Route::controller(AdministrativeController::class)->group(function(){
+        Route::get('/administrative',                       'index')           ->name('administrative.index');
+        Route::get('/administrative/create',                'create')          ->name('administrative.create');
+        Route::post('/administrative/create',               'store')           ->name('administrative.store');
+        Route::post('/administrative/',                     'search')          ->name('administrative.search');
+        Route::get('/administrative/{administrative}/edit', 'edit')            ->name('administrative.edit');
+        Route::post('/administrative/{administrative}',     'update')          ->name('administrative.update');
+        Route::get('/administrative/create',                'create')          ->name('administrative.create');
+        Route::get('/movement/{administrative}/create',     'movement_create') ->name('administrative.movement_create');
+        Route::post('/movement/{administrative}',           'movement_store')  ->name('administrative.movement_store');
+        Route::get('/acaution/{administrative}/create',     'acaution_create') ->name('administrative.acaution_create');
+        Route::post('/acaution/{administrative}',           'acaution_store')  ->name('administrative.acaution_store');
+        Route::get('/acaution/confirm/{id}',                'acaution_confirm')->name('administrative.acaution_confirm');
+        Route::get('/acaution/delete/{id}',                 'acaution_delete') ->name('administrative.acaution_delete');
+    });
+
+
+
+    /* ==================================================== RELATÓRIOS ======================================================== */
+
+    Route::controller(ReportController::class)->group(function(){
+        Route::get('/report/administrative',                'administrative_index')     ->name('report.administrative.index');
+        Route::get('/report/administrative/show/all',       'administrative_show_all')  ->name('report.administrative_show_all');
+        Route::get('/report/administrative/show/inactives', 'administrative_inactives') ->name('report.administrative_inactives');
+        Route::post('/report/administrative/sector',        'administrative_for_sector')->name('report.administrative_for_sector');
+        Route::post('/report/administrative/search',        'administrative_search')    ->name('report.administrative_search');
+        Route::get('/report/administrative/info/{id}',      'administrative_info')      ->name('report.administrative_info');
+    });
 
 
 });

@@ -23,5 +23,12 @@ class PermissionsSeeder extends Seeder
         Permission::create(['name' => 'êxito-cadastrar']);
         Permission::create(['name' => 'êxito-atualizar']);
         Permission::create(['name' => 'êxito-exportar']);
+        Permission::create(['name' => 'administrativo-visualizar']);
+        Permission::create(['name' => 'administrativo-cadastrar']);
+        Permission::create(['name' => 'administrativo-editar']);
+        Permission::create(['name' => 'administrativo-pesquisar']);
+        Permission::create(['name' => 'administrativo-relatório']);
+        Permission::create(['name' => 'administrativo-movimentação']);
+        Permission::create(['name' => 'administrativo-acautelamento']);
     }
 }

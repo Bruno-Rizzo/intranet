@@ -1,0 +1,10 @@
+APP_NAME=Laravel
+APP_ENV=production
+
+DB_CONNECTION=mysql
+DB_HOST=mysql
+DB_PORT=3306
+DB_DATABASE=intranet
+DB_USERNAME=sail
+DB_PASSWORD=password
+
