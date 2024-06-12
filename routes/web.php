@@ -149,6 +149,8 @@ Route::middleware('auth')->group(function(){
         Route::get('/administrative/create',                'create')          ->name('administrative.create');
         Route::get('/movement/{administrative}/create',     'movement_create') ->name('administrative.movement_create');
         Route::post('/movement/{administrative}',           'movement_store')  ->name('administrative.movement_store');
+        Route::get('/movement/confirm/{id}',                'movement_confirm')->name('administrative.movement_confirm');
+        Route::get('/movement/delete/{id}',                 'movement_delete') ->name('administrative.movement_delete');
         Route::get('/acaution/{administrative}/create',     'acaution_create') ->name('administrative.acaution_create');
         Route::post('/acaution/{administrative}',           'acaution_store')  ->name('administrative.acaution_store');
         Route::get('/acaution/confirm/{id}',                'acaution_confirm')->name('administrative.acaution_confirm');

@@ -49,4 +49,9 @@ class AdministrativePolicy
         return Auth::user()->role->hasPermission('administrativo-acautelamento');
     }
 
+    public function delete()
+    {
+        return Auth::user()->role->hasPermission('administrativo-excluir');
+    }
+
 }

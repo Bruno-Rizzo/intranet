@@ -160,6 +160,24 @@ class AdministrativeController extends Controller
         return to_route('administrative.edit',$administrative->id);
     }
 
+    public function movement_confirm($id)
+    {
+        Alert::question('Excluir Movimentação','Deseja excluir esta movimentação?')
+        ->showConfirmButton('<a href="/movement/delete/'.$id.'" style="color:#FFF;text-decoration:none">Excluir</a>', '#BB2D3B')
+        ->toHtml()
+        ->showCancelButton('Cancelar', '#3085d6')->reverseButtons();
+        return redirect()->back();
+    }
+
+    public function movement_delete($id)
+    {
+        $this->authorize('delete', App\Models\Administrative::class);
+
+        AdmMovement::find($id)->delete();
+        Alert::toast('Movimentação excluída!', 'error');
+        return redirect()->back();
+    }
+
     public function acaution_create(Administrative $administrative)
     {
         $types = Type::all();
@@ -200,6 +218,8 @@ class AdministrativeController extends Controller
 
     public function acaution_delete($id)
     {
+        $this->authorize('create', App\Models\Administrative::class);
+
         Acaution::find($id)->delete();
         Alert::toast('Acautelamento excluído!', 'error');
         return redirect()->back();

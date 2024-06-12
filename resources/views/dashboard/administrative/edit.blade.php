@@ -285,6 +285,9 @@
                                                 <th>Função</th>
                                                 <th class="text-center">Data</th>
                                                 <th class="text-center">Movimentação</th>
+                                                @can('delete', App\Models\Administrative::class)
+                                                <th class="text-center">Ações</th>
+                                                @endcan
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -298,7 +301,7 @@
                                                         @if ($item->movement_id == 1)
                                                             <span
                                                                 class="badge rounded-pill bg-success">{{ 'Ingresso' }}</span>
-                                                        @elseif ($item->movement_id == 1)
+                                                        @elseif ($item->movement_id == 2)
                                                             <span
                                                                 class="badge rounded-pill bg-danger">{{ 'Saída' }}</span>
                                                         @else
@@ -306,6 +309,14 @@
                                                         class="badge rounded-pill bg-warning">{{ 'Função' }}</span>
                                                         @endif
                                                     </td>
+                                                    @can('delete', App\Models\Administrative::class)
+                                                    <td class="text-center">
+                                                        <a href="{{ route('administrative.movement_confirm', $item->id) }}"
+                                                            class="text-danger">
+                                                            <i class="fa fa-trash"></i>
+                                                        </a>
+                                                    </td>
+                                                    @endcan
                                                 </tr>
                                             @endforeach
                                     </table>
@@ -340,7 +351,9 @@
                                                 <th class="text-center">Calibre</th>
                                                 <th class="text-center">Nº Cautela / CRAF</th>
                                                 <th class="text-center">Nº Arma</th>
+                                                @can('delete', App\Models\Administrative::class)
                                                 <th class="text-center">Ações</th>
+                                                @endcan
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -352,12 +365,14 @@
                                                     <td class="text-center">{{ $item->brand }}</td>
                                                     <td class="text-center">{{ $item->acaution_number }}</td>
                                                     <td class="text-center">{{ $item->gun_number }}</td>
-                                                     <td class="text-center">
+                                                    @can('delete', App\Models\Administrative::class)
+                                                    <td class="text-center">
                                                         <a href="{{ route('administrative.acaution_confirm', $item->id) }}"
                                                             class="text-danger">
                                                             <i class="fa fa-trash"></i>
                                                         </a>
                                                     </td>
+                                                    @endcan
                                                 </tr>
                                             @endforeach
                                     </table>
