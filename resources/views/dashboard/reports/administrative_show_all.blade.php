@@ -108,8 +108,9 @@
 
 
     <main>
+        <p style="float:right">Rio de Janeiro, {{\Carbon\Carbon::now()->format('d/m/Y');}}</p>
 
-        <h3>Lista de Servidores ( Ativos )</h3>
+        <h3>Lista de Servidores Ativos</h3>
         <hr>
 
         <table width="100%" class="table" style="margin-top: 15px">
@@ -132,6 +133,31 @@
                 @endforeach
             </tbody>
         </table>
+
+        <h3 style ="margin-top: 30px">Total de Servidores por Setor</h3>
+        <div style="font-size: 13px">
+        Assessoria de Suporte Técnico: {{$data['assessoria_suporte_tecnico']}} <br>
+        Assessoria Especial de Inteligência: {{$data['assessoria_especial_inteligencia']}} <br>
+        Divisão de Administrativa: {{$data['divisao_administrativa']}} <br>
+        Divisão de Informática: {{$data['divisao_informatica']}} <br>
+        Divisão de Protocolo:  {{$data['divisao_de_protocolo']}} <br>
+        Escola de Inteligência Penitenciária:  {{$data['escola_inteligencia']}} <br>
+        Gabinete do Subsecretário:  {{$data['gabinete']}} <br>
+        Ministério Público (cedido):  {{$data['ministerio_publico']}} <br>
+        Núcleo de Inteligência de Campos:  {{$data['nucleo_campos']}} <br>
+        Núcleo de Inteligência de Gericinó:  {{$data['nucleo_gericino']}} <br>
+        Núcleo de Inteligência do Grande Rio:  {{$data['nucleo_grande_rio']}} <br>
+        Núcleo de Inteligência de Japeri:  {{$data['nucleo_japeri']}} <br>
+        Núcleo de Inteligência de Niterói:  {{$data['nucleo_niteroi']}} <br>
+        Núcleo de Inteligência do Leste Fluminense:  {{$data['nucleo_leste_fluminense']}} <br>
+        Núcleo de Inteligência do Sul Fluminense:  {{$data['nucleo_sul_fluminense']}} <br>
+        Serviço de Pesquisa e Acompanhamento Processual:  {{$data['servico_acompanhamento_processual']}} <br>
+        Superintendência de Ações Especializadas:  {{$data['superintendencia_especializadas']}} <br>
+        Superintendência de Contrainteligência:  {{$data['superintendencia_contrainteligencia']}} <br>
+        Superintendência de Superintendência de Inteligência:  {{$data['superintendencia_inteligencia']}} <br>
+        Superintendência de Inteligência Eletrônica:  {{$data['superintendencia_inteligencia_eletronica']}} <br>
+        </div>
+        <h3 style ="margin-top: 20px">Total Geral: {{$data['total']}} servidores ativos</h3>
 
     </main>
 

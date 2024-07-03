@@ -40,20 +40,6 @@
 
                                 <tr>
                                     <td style="width:5%">
-                                        <img src="{{ asset('assets/images/links/sispen.png') }}" height="45">
-                                    </td>
-                                    <td style="vertical-align: middle">
-                                        <span style="font-size:16px">Cronos RJ - Difusão DIPEN</span>
-                                    </td>
-                                    <td class="text-end" style="vertical-align: middle">
-                                        <a href="https://cronos.rj.depen.gov.br/login" target="_blank" class="btn btn-info btn-sm">
-                                            <i class="far fa-hand-point-right me-1"></i> Acessar
-                                        </a>
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td style="width:5%">
                                         <img src="{{ asset('assets/images/links/sipen.png') }}" height="45">
                                     </td>
                                     <td style="vertical-align: middle">
@@ -86,6 +72,20 @@
 
                                 <tr>
                                     <td style="width:5%">
+                                        <img src="{{ asset('assets/images/links/einperj_logo.png') }}" height="50">
+                                    </td>
+                                    <td style="vertical-align: middle">
+                                        <span style="font-size:16px">Site Escola de Inteligência - EINPERJ</span>
+                                    </td>
+                                    <td class="text-end" style="vertical-align: middle">
+                                        <a href="http://10.9.44.9" target="_blank" class="btn btn-info btn-sm">
+                                            <i class="far fa-hand-point-right me-1"></i> Acessar
+                                        </a>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td style="width:5%">
                                         <img src="{{ asset('assets/images/links/rede.png') }}" height="45">
                                     </td>
                                     <td style="vertical-align: middle">
@@ -101,14 +101,42 @@
 
                                 <tr>
                                     <td style="width:5%">
-                                        <img src="{{ asset('assets/images/links/sinespjus.png') }}" height="45">
+                                        <img src="{{ asset('assets/images/links/osint_logo.png') }}" height="50">
                                     </td>
                                     <td style="vertical-align: middle">
-                                        <span style="font-size:16px">Sistema Nacional de Informações de Segurança Pública -
-                                            SINESP</span>
+                                        <span style="font-size:16px">Dashboard OSINT 1</span>
                                     </td>
                                     <td class="text-end" style="vertical-align: middle">
-                                        <a href="https://seguranca.sinesp.gov.br/sinesp-seguranca/login.jsf" target="_blank"
+                                        <a href="https://start.me/p/MER7on/osint" target="_blank" class="btn btn-info btn-sm">
+                                            <i class="far fa-hand-point-right me-1"></i> Acessar
+                                        </a>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td style="width:5%">
+                                        <img src="{{ asset('assets/images/links/osint_logo.png') }}" height="50">
+                                    </td>
+                                    <td style="vertical-align: middle">
+                                        <span style="font-size:16px">Dashboard OSINT 2</span>
+                                    </td>
+                                    <td class="text-end" style="vertical-align: middle">
+                                        <a href="https://start.me/p/vjlrM1/d4shboard" target="_blank" class="btn btn-info btn-sm">
+                                            <i class="far fa-hand-point-right me-1"></i> Acessar
+                                        </a>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td style="width:5%">
+                                        <img src="{{ asset('assets/images/links/logo_rj.png') }}" height="50">
+                                    </td>
+                                    <td style="vertical-align: middle">
+                                        <span style="font-size:16px">Portal de Segurança do Estado do Rio de Janeiro -
+                                            Segurança RJ</span>
+                                    </td>
+                                    <td class="text-end" style="vertical-align: middle">
+                                        <a href="https://10.200.96.20/portal/portal//" target="_blank"
                                             class="btn btn-info btn-sm">
                                             <i class="far fa-hand-point-right me-1"></i> Acessar
                                         </a>
@@ -117,14 +145,28 @@
 
                                 <tr>
                                     <td style="width:5%">
-                                        <img src="{{ asset('assets/images/links/logo_rj.png') }}" height="45">
+                                        <img src="{{ asset('assets/images/links/senapen_logo.png') }}" height="50">
                                     </td>
                                     <td style="vertical-align: middle">
-                                        <span style="font-size:16px">Portal de Segurança do Estado do Rio de Janeiro -
-                                            Segurança RJ</span>
+                                        <span style="font-size:16px">Cronos RJ - Difusão SENAPEN</span>
                                     </td>
                                     <td class="text-end" style="vertical-align: middle">
-                                        <a href="https://10.200.96.20/portal/portal//" target="_blank"
+                                        <a href="https://cronos.rj.depen.gov.br/login" target="_blank" class="btn btn-info btn-sm">
+                                            <i class="far fa-hand-point-right me-1"></i> Acessar
+                                        </a>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td style="width:5%">
+                                        <img src="{{ asset('assets/images/links/sinespjus.png') }}" height="45">
+                                    </td>
+                                    <td style="vertical-align: middle">
+                                        <span style="font-size:16px">Sistema Nacional de Informações de Segurança Pública -
+                                            SINESP</span>
+                                    </td>
+                                    <td class="text-end" style="vertical-align: middle">
+                                        <a href="https://seguranca.sinesp.gov.br/sinesp-seguranca/login.jsf" target="_blank"
                                             class="btn btn-info btn-sm">
                                             <i class="far fa-hand-point-right me-1"></i> Acessar
                                         </a>

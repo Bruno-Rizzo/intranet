@@ -162,12 +162,13 @@ Route::middleware('auth')->group(function(){
     /* ==================================================== RELATÓRIOS ======================================================== */
 
     Route::controller(ReportController::class)->group(function(){
-        Route::get('/report/administrative',                'administrative_index')     ->name('report.administrative.index');
-        Route::get('/report/administrative/show/all',       'administrative_show_all')  ->name('report.administrative_show_all');
-        Route::get('/report/administrative/show/inactives', 'administrative_inactives') ->name('report.administrative_inactives');
-        Route::post('/report/administrative/sector',        'administrative_for_sector')->name('report.administrative_for_sector');
-        Route::post('/report/administrative/search',        'administrative_search')    ->name('report.administrative_search');
-        Route::get('/report/administrative/info/{id}',      'administrative_info')      ->name('report.administrative_info');
+        Route::get('/report/administrative',                'administrative_index')             ->name('report.administrative.index');
+        Route::get('/report/administrative/show/all',       'administrative_show_all')          ->name('report.administrative_show_all');
+        Route::get('/report/administrative/show/all/names', 'administrative_show_all_by_name')  ->name('report.administrative_show_all_by_name');
+        Route::get('/report/administrative/show/inactives', 'administrative_inactives')         ->name('report.administrative_inactives');
+        Route::post('/report/administrative/sector',        'administrative_for_sector')        ->name('report.administrative_for_sector');
+        Route::post('/report/administrative/search',        'administrative_search')            ->name('report.administrative_search');
+        Route::get('/report/administrative/info/{id}',      'administrative_info')              ->name('report.administrative_info');
     });
 
 

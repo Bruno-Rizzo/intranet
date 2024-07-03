@@ -107,6 +107,7 @@
     </footer>
 
     <main>
+        <p style="float:right">Rio de Janeiro, {{\Carbon\Carbon::now()->format('d/m/Y');}}</p>
 
     <h3>Lista de Servidores por Setores</h3>
     <hr>
@@ -131,6 +132,8 @@
           @endforeach
         </tbody>
       </table>
+
+      <h3 style ="margin-top: 20px">Total de Servidores:{{$total}} </h3>
 
     </main>
 

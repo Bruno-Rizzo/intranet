@@ -33,7 +33,7 @@
 
                                             <div id="accordion" class="custom-accordion">
 
-                                                {{-- SERVIDORES SSISPEN GERAL ATIVOS --}}
+                                                {{-- SERVIDORES SSISPEN ATIVOS POR SETOR --}}
 
                                                 <div class="card mb-1 shadow-none">
 
@@ -42,7 +42,7 @@
                                                         aria-controls="collapseOne">
                                                         <div class="card-header" id="headingOne">
                                                             <h6 class="m-0">
-                                                                Servidores SSISPEN Geral ( Ativos )
+                                                                Servidores SSISPEN Ativos ( Ordenados por Setor )
                                                                 <i class="mdi mdi-minus float-end accor-plus-icon"></i>
                                                             </h6>
                                                         </div>
@@ -74,7 +74,52 @@
 
                                                 </div>
 
-                                                {{-- FIM - SERVIDORES SSISPEN GERAL ATIVOS --}}
+                                                {{-- FIM - SERVIDORES SSISPEN ATIVOS POR SETOR --}}
+
+
+                                                {{-- SERVIDORES SSISPEN ATIVOS POR NOME --}}
+
+                                                <div class="card mb-1 shadow-none">
+
+                                                    <a href="#collapseTwo" class="text-dark collapsed"
+                                                        data-bs-toggle="collapse" aria-expanded="false"
+                                                        aria-controls="collapseTwo">
+                                                        <div class="card-header" id="headingTwo">
+                                                            <h6 class="m-0">
+                                                                Servidores SSISPEN Ativos ( Ordenados por Nome )
+                                                                <i class="mdi mdi-minus float-end accor-plus-icon"></i>
+                                                            </h6>
+                                                        </div>
+                                                    </a>
+
+                                                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+                                                        data-bs-parent="#accordion">
+
+                                                        <div class="card-body">
+
+                                                            <form action="{{ route('report.administrative_show_all_by_name') }}"
+                                                                target="_blank" method="get">
+                                                                @csrf
+
+                                                                <div class="row mb-1">
+                                                                    <div class="col-sm-2">
+                                                                        <button type="submit" class="btn btn-sm btn-info">
+                                                                            <i class="ri-printer-line me-2"></i> Gerar
+                                                                            Relatório
+                                                                        </button>
+                                                                    </div>
+                                                                </div>
+
+                                                            </form>
+
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+
+                                                {{-- FIM - SERVIDORES SSISPEN ATIVOS POR NOME --}}
+
 
 
                                                 <div id="accordion" class="custom-accordion">
@@ -83,10 +128,10 @@
 
                                                     <div class="card mb-1 shadow-none">
 
-                                                        <a href="#collapseTwo" class="text-dark collapsed"
+                                                        <a href="#collapseThree" class="text-dark collapsed"
                                                             data-bs-toggle="collapse" aria-expanded="false"
-                                                            aria-controls="collapseTwo">
-                                                            <div class="card-header" id="headingTwo">
+                                                            aria-controls="collapseThree">
+                                                            <div class="card-header" id="headingThree">
                                                                 <h6 class="m-0">
                                                                     Servidores SSISPEN Geral ( Inativos )
                                                                     <i class="mdi mdi-minus float-end accor-plus-icon"></i>
@@ -94,7 +139,7 @@
                                                             </div>
                                                         </a>
 
-                                                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+                                                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
                                                             data-bs-parent="#accordion">
 
                                                             <div class="card-body">
@@ -129,10 +174,10 @@
 
                                                 <div class="card mb-1 shadow-none">
 
-                                                    <a href="#collapseThree" class="text-dark collapsed"
+                                                    <a href="#collapseFour" class="text-dark collapsed"
                                                         data-bs-toggle="collapse" aria-expanded="false"
-                                                        aria-controls="collapseThree">
-                                                        <div class="card-header" id="headingThree">
+                                                        aria-controls="collapseFour">
+                                                        <div class="card-header" id="headingFour">
                                                             <h6 class="m-0">
                                                                 Servidores SSISPEN por Setor
                                                                 <i class="mdi mdi-minus float-end accor-plus-icon"></i>
@@ -140,7 +185,7 @@
                                                         </div>
                                                     </a>
 
-                                                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                                                    <div id="collapseFour" class="collapse" aria-labelledby="headingFour"
                                                         data-bs-parent="#accordion">
 
                                                         <div class="card-body">
@@ -191,12 +236,12 @@
 
                                                 <div class="card mb-1 shadow-none">
 
-                                                    <a href="#collapseFour"
+                                                    <a href="#collapseFive"
                                                         class="text-dark @if (isset($search)) @else collapsed @endif"
                                                         data-bs-toggle="collapse"
                                                         aria-expanded="@if (isset($search)) true @else false @endif"
-                                                        aria-controls="collapseFour">
-                                                        <div class="card-header" id="headingFour">
+                                                        aria-controls="collapseFive">
+                                                        <div class="card-header" id="headingFive">
                                                             <h6 class="m-0">
                                                                 Dados do Servidor
                                                                 <i class="mdi mdi-minus float-end accor-plus-icon"></i>
@@ -204,7 +249,7 @@
                                                         </div>
                                                     </a>
 
-                                                    <div id="collapseFour" class="collapse" aria-labelledby="headingFour"
+                                                    <div id="collapseFive" class="collapse" aria-labelledby="headingFive"
                                                         data-bs-parent="#accordion">
 
                                                         <div class="card-body">

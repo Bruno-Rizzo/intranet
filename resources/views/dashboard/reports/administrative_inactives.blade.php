@@ -108,8 +108,10 @@
 
 
     <main>
+        <p style="float:right">Rio de Janeiro, {{\Carbon\Carbon::now()->format('d/m/Y');}}</p>
 
-        <h3>Lista de Servidores ( Inativos )</h3>
+
+        <h3>Lista de Servidores Inativos </h3>
         <hr>
 
         <table width="100%" class="table" style="margin-top: 15px">
@@ -132,6 +134,7 @@
                 @endforeach
             </tbody>
         </table>
+        <h3 style ="margin-top: 20px">Total de Servidores:{{$total}} </h3>
 
     </main>
 
