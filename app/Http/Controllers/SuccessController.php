@@ -92,4 +92,10 @@ class SuccessController extends Controller
         Alert::toast('Êxito editado', 'success');
         return to_route('search.index')->with('success','O êxito foi editado!');
     }
+
+    public function download()
+    {
+        $pdf = public_path('pdf/formulario.pdf');
+        return response()->download($pdf);
+    }
 }
