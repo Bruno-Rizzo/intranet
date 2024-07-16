@@ -106,8 +106,8 @@ class ReportController extends Controller
             'division_id.required' => 'O campo setor é obrigatório'
         ]);
 
-        $total = Administrative::where('division_id',$validated['division_id'])->count();
-        $administratives = Administrative::where('division_id',$validated['division_id'])->get();
+        $total = Administrative::where('division_id',$validated['division_id'])->where('status', 1)->count();
+        $administratives = Administrative::where('division_id',$validated['division_id'])->where('status', 1)->get();
         $pdf = PDF::loadView('dashboard.reports.administrative_for_sector',compact('administratives','total'))->setPaper('a4','portrait');
         return $pdf->stream('servidores_por_setor.pdf');
     }
