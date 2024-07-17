@@ -224,4 +224,10 @@ class AdministrativeController extends Controller
         Alert::toast('Acautelamento excluído!', 'error');
         return redirect()->back();
     }
+
+    public function download()
+    {
+        $pdf = public_path('pdf/atualizacao.pdf');
+        return response()->download($pdf);
+    }
 }

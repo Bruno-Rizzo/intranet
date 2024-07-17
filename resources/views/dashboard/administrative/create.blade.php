@@ -33,6 +33,9 @@
                             <span style="font-size: 18px"><b>Administrativo</b></span>
                             <i class=" ri-git-commit-line" style="vertical-align: middle"></i>
                             <span style="font-size: 14px">Cadastro de Servidor</span>
+                            <a href="{{ route('administrative.download') }}" class="btn btn-sm btn-danger ms-5">
+                                <i class="fa fa-file-pdf me-1"></i> Download PDF
+                            </a>
                         </div>
 
                         <form action="{{route('administrative.store')}}" method="post">

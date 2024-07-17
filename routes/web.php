@@ -156,6 +156,7 @@ Route::middleware('auth')->group(function(){
         Route::post('/acaution/{administrative}',           'acaution_store')  ->name('administrative.acaution_store');
         Route::get('/acaution/confirm/{id}',                'acaution_confirm')->name('administrative.acaution_confirm');
         Route::get('/acaution/delete/{id}',                 'acaution_delete') ->name('administrative.acaution_delete');
+        Route::get('/administrative/download',              'download')        ->name('administrative.download');
     });
 
 
