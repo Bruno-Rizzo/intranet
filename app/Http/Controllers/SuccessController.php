@@ -30,7 +30,7 @@ class SuccessController extends Controller
         $this->authorize('create', App\Models\Success::class);
 
         $validated = $request->validate([
-            'date'                   => 'required',
+            'date'                   => ['required','date_format:Y-m-d'],
             'sector_id'              => 'required',
             'boss_name'              => 'required',
             'boss_id'                => 'required',
@@ -52,6 +52,9 @@ class SuccessController extends Controller
             'seal_number'            => 'nullable',
             'dynamics_of_fact'       => 'nullable',
         ],[
+            'date.required'                   => 'O campo data é obrigatório',
+            'date.date_format'                => 'O campo data não corresponde ao formato dd/mm/aaaa',
+            'date.date'                       => 'A data precisa ser em um formato válido',
             'sector_id.required'              => 'O campo setor é obrigatório',
             'boss_name.required'              => 'O campo chefe / superintendente é obrigatório',
             'boss_id.required'                => 'O campo id é obrigatório',

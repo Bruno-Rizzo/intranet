@@ -30,7 +30,7 @@ class SeizureController extends Controller
     $validated = $request->validate([
         'prisional_unity_id.*' => 'required',
         'coordination_id.*'    => 'required',
-        'date.*'               => 'required',
+        'date.*'               => ['required','date_format:Y-m-d'],
         'seizure_type_id.*'    => 'required',
         'amount.*'             => 'required'
 
@@ -38,6 +38,7 @@ class SeizureController extends Controller
         'prisional_unity_id.*.required' => 'A unidade é obrigatória',
         'coordination_id.*.required'    => 'A coordenação é obrigatória',
         'date.*.required'               => 'A data é obrigatória',
+        'date.*.date_format'            => 'A data não corresponde ao formato dd/mm/aaaa',
         'seizure_type_id.*.required'    => 'O tipo é obrigatório',
         'amount.*.required'             => 'A quantidade é obrigatória',
     ]);
