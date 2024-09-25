@@ -18,11 +18,13 @@ class StatisticController extends Controller
     public function seizure_export(Request $request)
     {
         $validated = $request->validate([
-            'date1' => 'required',
-            'date2' => 'required',
+            'date1' => ['required','date_format:Y-m-d'],
+            'date2' => ['required','date_format:Y-m-d'],
         ],[
-            'date1.required' => 'O camo data inicial é obrigatório',
-            'date2.required' => 'O camo data final é obrigatório',
+            'date1.required'    => 'O campo data inicial é obrigatório',
+            'date1.date_format' => 'O campo data inicial não corresponde ao formato dd/mm/aaaa',
+            'date2.required'    => 'O campo data final é obrigatório',
+            'date2.date_format' => 'O campo data finalnão corresponde ao formato dd/mm/aaaa',
         ]);
 
         $date1    = $request->date1;
@@ -34,11 +36,13 @@ class StatisticController extends Controller
     public function success_export(Request $request)
     {
         $validated = $request->validate([
-            'date3' => 'required',
-            'date4' => 'required',
+            'date3' => ['required','date_format:Y-m-d'],
+            'date4' => ['required','date_format:Y-m-d'],
         ],[
-            'date3.required' => 'O camo data inicial é obrigatório',
-            'date4.required' => 'O camo data final é obrigatório',
+            'date3.required'    => 'O campo data inicial é obrigatório',
+            'date3.date_format' => 'O campo data inicial não corresponde ao formato dd/mm/aaaa',
+            'date4.required'    => 'O campo data final é obrigatório',
+            'date4.date_format' => 'O campo data final não corresponde ao formato dd/mm/aaaa',
         ]);
 
         $date3     = $request->date3;

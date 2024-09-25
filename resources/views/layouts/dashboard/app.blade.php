@@ -11,9 +11,9 @@
     <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
     @yield('refresh')
     <meta content="Themesdesign" name="author" />
-    {{-- @can('view', App\Models\Helpdesk::class)
+    @can('view', App\Models\Helpdesk::class)
     <meta http-equiv="refresh" content="300">
-    @endcan --}}
+    @endcan
     <!-- App favicon -->
     <link rel="shortcut icon" href="{{ asset('assets/images/favicon.ico') }}">
 

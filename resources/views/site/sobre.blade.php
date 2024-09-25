@@ -98,7 +98,7 @@
                                 </div>
 
                                 <div class="mt-4 ms-3">
-                                    <h5>Leonardo Franceschin</h5>
+                                    <h5>Luiz Felipe de Oliveira Nogueira</h5>
                                     Subsecretário de Inteligência
                                 </div>
                             </div>
