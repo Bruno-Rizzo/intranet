@@ -13,6 +13,7 @@ use App\Http\Controllers\SearchController;
 use App\Http\Controllers\StatisticController;
 use App\Http\Controllers\AdministrativeController;
 use App\Http\Controllers\ReportController;
+use App\Http\Controllers\DownloadController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -33,6 +34,11 @@ Route::controller(AutocodeController::class)->group(function(){
     Route::post('/qrcode/store' ,  'store')  ->name('qrcode.store');
 });
 
+
+Route::controller(DownloadController::class)->group(function(){
+    Route::get('/download',      'index')    ->name('download.index');
+    Route::get('/download/file', 'download') ->name('download.file');
+});
 
 
 /* ================================ ROTAS DO DASHBOARD ===================================== */

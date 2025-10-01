@@ -36,6 +36,13 @@
                 </li>
 
                 <li>
+                    <a href="{{route('download.index')}}" class="waves-effect">
+                        <i class=" ri-file-download-line"></i>
+                        <span>Downloads</span>
+                    </a>
+                </li>
+
+                <li>
                     <a href="{{route('site.sobre')}}" class="waves-effect">
                         <i class=" ri-information-line"></i>
                         <span>Sobre</span>
