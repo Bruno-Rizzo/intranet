@@ -49,7 +49,7 @@ class Administrative extends Model
 
     public function acautions()
     {
-        return $this->hasMany(Acautions::class);
+        return $this->hasMany(Acaution::class);
     }
 
     public function admMovements()

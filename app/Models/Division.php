@@ -29,4 +29,10 @@ class Division extends Model
     {
         return $this->hasMany(AdmMovement::class);
     }
+
+    public function vehicles()
+    {
+       return $this->hasMany(Vehicle::class);
+    }
+
 }

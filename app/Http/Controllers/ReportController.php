@@ -9,6 +9,7 @@ use App\Models\Division;
 use App\Models\Administrative;
 use App\Models\AdmMovement;
 use App\Models\Acaution;
+use App\Models\Vehicle;
 
 class ReportController extends Controller
 {
@@ -132,4 +133,88 @@ class ReportController extends Controller
         $pdf = PDF::loadView('dashboard.reports.administrative_info',compact('administrative','adm_movements','acautions'))->setPaper('a4','portrait');
         return $pdf->stream('dados_do_servidor.pdf');
     }
+
+     public function vehicle_index()
+    {
+        $this->authorize('report', App\Models\Vehicle::class);
+
+        $divisions = Division::all();
+        return view('dashboard.vehicle.report_index', compact('divisions'));
+    }
+
+     public function vehicle_server()
+    {
+         $data = [
+        'assessoria_suporte_tecnico'               => Vehicle::where('division_id', 1)->count(),
+        'assessoria_especial_inteligencia'         => Vehicle::where('division_id', 2)->count(),
+        'divisao_administrativa'                   => Vehicle::where('division_id', 3)->count(),
+        'divisao_informatica'                      => Vehicle::where('division_id', 4)->count(),
+        'divisao_de_protocolo'                     => Vehicle::where('division_id', 5)->count(),
+        'escola_inteligencia'                      => Vehicle::where('division_id', 6)->count(),
+        'gabinete'                                 => Vehicle::where('division_id', 7)->count(),
+        'ministerio_publico'                       => Vehicle::where('division_id', 8)->count(),
+        'nucleo_campos'                            => Vehicle::where('division_id', 9)->count(),
+        'nucleo_gericino'                          => Vehicle::where('division_id', 10)->count(),
+        'nucleo_grande_rio'                        => Vehicle::where('division_id', 11)->count(),
+        'nucleo_japeri'                            => Vehicle::where('division_id', 12)->count(),
+        'nucleo_niteroi'                           => Vehicle::where('division_id', 13)->count(),
+        'nucleo_leste_fluminense'                  => Vehicle::where('division_id', 14)->count(),
+        'nucleo_sul_fluminense'                    => Vehicle::where('division_id', 15)->count(),
+        'servico_acompanhamento_processual'        => Vehicle::where('division_id', 16)->count(),
+        'superintendencia_especializadas'          => Vehicle::where('division_id', 17)->count(),
+        'superintendencia_contrainteligencia'      => Vehicle::where('division_id', 18)->count(),
+        'superintendencia_inteligencia'            => Vehicle::where('division_id', 19)->count(),
+        'superintendencia_inteligencia_eletronica' => Vehicle::where('division_id', 20)->count(),
+        'total'                                    => Vehicle::all()->count()
+        ];
+        $vehicles = Vehicle::all()->sortBy('name');
+        $pdf = PDF::loadView('dashboard.reports.vehicle_for_server',compact('vehicles','data'))->setPaper('a4','landscape');
+        return $pdf->stream('lista_de_viaturas.pdf');
+    }
+
+     public function vehicle_division(Request $request)
+    {
+        $this->authorize('report', App\Models\Vehicle::class);
+
+        $validated = $request->validate([
+            'division_id' => 'required'
+        ],[
+            'division_id.required' => 'O campo setor é obrigatório'
+        ]);
+
+        $division = Division::findOrFail($validated['division_id']);
+        $division_name = $division->name;
+        $total = Vehicle::where('division_id',$validated['division_id'])->count();
+        $vehicles = Vehicle::where('division_id',$validated['division_id'])->get();
+        $pdf = PDF::loadView('dashboard.reports.vehicle_for_division',compact('vehicles','total','division_name'))->setPaper('a4','landscape');
+        return $pdf->stream('viaturas_por_setor.pdf');
+    }
+
+     public function vehicle_search(Request $request)
+    {
+        $this->authorize('report', App\Models\Vehicle::class);
+
+        $validated = $request->validate([
+            'plate'=>'required', 
+            ],[
+            'plate.required' => 'O campo placa é obrigatório',
+            ]);
+
+        $divisions = Division::all();       
+        $search = Vehicle::where('original_plate', 'like', '%' . $validated['plate'] . '%')
+                     ->orWhere('reserved_plate', 'like', '%' . $validated['plate'] . '%')
+                     ->get();
+        return view('dashboard.vehicle.report_index',compact('search','divisions'));
+    }
+
+     public function vehicle_info($id)
+    {
+        $this->authorize('report', App\Models\Vehicle::class);
+        
+        $vehicle = Vehicle::where('id', $id)->first();
+        $pdf = PDF::loadView('dashboard.reports.vehicle_info',compact('vehicle'))->setPaper('a4','portrait');
+        return $pdf->stream('dados_da_viatura.pdf');
+    }
+
+
 }

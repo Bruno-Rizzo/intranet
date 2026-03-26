@@ -60,6 +60,30 @@
                 </li>
                 @endcan
 
+                @can('view', App\Models\Vehicle::class)
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="ri-police-car-fill"></i>
+                        <span>Viaturas</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <!-- @can('view', App\Models\Seizure::class) -->
+                        <li><a href="{{route('vehicle.index')}}">Cadastros</a></li>
+                        <li><a href="{{route('report.vehicle.index')}}">Relatórios</a></li>
+                        <!-- @endcan -->
+                    </ul>
+                </li>
+                @endcan
+
+                  @can('view', App\Models\Helpdesk::class)
+                <li>
+                    <a href="{{ route('helpdesk.index') }}" class="waves-effect">
+                        <i class="ri-computer-line"></i>
+                        <span>Helpdesk</span>
+                    </a>
+                </li>
+                @endcan
+
                 @can('admin')
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
@@ -73,17 +97,6 @@
                     </ul>
                 </li>
                 @endcan
-
-
-                @can('view', App\Models\Helpdesk::class)
-                <li>
-                    <a href="{{ route('helpdesk.index') }}" class="waves-effect">
-                        <i class="ri-computer-line"></i>
-                        <span>Helpdesk</span>
-                    </a>
-                </li>
-                @endcan
-
 
                 <li>
                     <a href="{{ route('home') }}" class="waves-effect">

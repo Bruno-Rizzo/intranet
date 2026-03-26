@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lista de Viaturas por Setor</title>
+
+    <style>
+
+        @page{
+            margin: 0cm 0cm;
+        }
+
+        body{
+            margin-left: 1cm;
+            margin-right: 1cm;
+            margin-top:4.5cm;
+            margin-bottom:3.5cm;
+            font-size: 12px;
+            font-family:Arial, Helvetica, sans-serif;color:#505050;
+        }
+
+        header{
+            position:fixed;
+            top: 0cm;
+            left: 0cm;
+            right: 0cm;
+            height: 4cm;
+
+            background-color: #EEE;
+            border-bottom: 1px solid grey;
+            text-align: center;
+            color: #505050;
+        }
+
+        footer{
+            position:fixed;
+            bottom: 0cm;
+            left: 0cm;
+            right: 0cm;
+            height: 2cm;
+
+            background-color: #EEE;
+            border-top: 1px solid grey;
+            text-align: center;
+            color: #505050;
+        }
+
+        .logo_topo{
+            margin-top: 15px;
+        }
+
+        tr:nth-child(even){
+            background-color: #DDD;
+        }
+
+        .table{
+            border-collapse: collapse;
+        }
+
+        thead th{
+            background-color: #366092;
+            color: #EEE;
+            font-weight: 400;
+        }
+
+        .table td{
+            border:1px solid grey;
+            padding-left: 4px;
+            padding-right: 4px;
+        }
+        .table th{
+            border:1px solid grey;
+            font-size: 15px;
+            padding-left: 4px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <header>
+
+        <img class="logo_topo" src="{{public_path('/assets/images/logo_pdf_pp.png')}}" alt="" srcset="">
+
+        <p>
+            Governo do Estado do Rio de Janeiro<br>
+            Subsecretaria de Inteligência Penitenciária<br>
+            Polícia Penal - RJ
+        </p>
+
+    </header>
+
+    <footer>
+
+        <p>
+            Subsecretaria de Inteligência da Polícia Penal<br> Rua Presidente Vargas, n 2555 - Edifício Presidente Business Center - 14º andar - Cidade Nova - Rio de Janeiro<br>
+            e-mail: s1.ssispen@seap.rj.gov
+        </p>
+
+    </footer>
+
+    <main>
+        <p style="float:right">Rio de Janeiro, {{\Carbon\Carbon::now()->format('d/m/Y');}}</p>
+
+    <h3>Lista de Viaturas</h3>
+    <h3>Setor: {{$division_name}}</h3>
+    <hr>
+
+    <table width="100%" class="table" style="margin-top: 15px">
+        <thead>
+          <tr>
+            <th style="text-align: left">Nome</th>
+            <th style="text-align: left">ID Funcional</th>
+            <th style="text-align: left">Marca</th>
+            <th style="text-align: left">Modelo</th>
+            <th style="text-align: left">Placa Original</th>
+            <th style="text-align: left">Placa Reservada</th>
+          </tr>
+        </thead>
+        <tbody>
+          @foreach ($vehicles as $item)
+            <tr>
+                <td>{{$item->name}}</td>
+                <td>{{$item->identify}}</td>
+                <td>{{$item->brand}}</td>
+                <td>{{$item->model}}</td>
+                <td>{{$item->original_plate}}</td>
+                <td>{{$item->reserved_plate}}</td>
+            </tr>
+          @endforeach
+        </tbody>
+      </table>
+
+      <h3 style ="margin-top: 20px">Total de Viaturas:{{$total}} </h3>
+
+    </main>
+
+    <script type="text/php">
+        if(isset($pdf)){
+            $pdf->page_text(525,820,"Página {PAGE_NUM} de {PAGE_COUNT}",'arial',9,array(0,0,0));
+        }
+    </script>
+
+</body>
+</html>

@@ -30,6 +30,11 @@ class PermissionsSeeder extends Seeder
         // Permission::create(['name' => 'administrativo-relatório']);
         // Permission::create(['name' => 'administrativo-movimentação']);
         // Permission::create(['name' => 'administrativo-acautelamento']);
-        Permission::create(['name' => 'administrativo-excluir']);
+        // Permission::create(['name' => 'administrativo-excluir']);
+        Permission::create(['name' => 'viatura-visualizar']);
+        Permission::create(['name' => 'viatura-cadastrar']);
+        Permission::create(['name' => 'viatura-editar']);
+        Permission::create(['name' => 'viatura-pesquisar']);
+        Permission::create(['name' => 'viatura-relatório']);
     }
 }

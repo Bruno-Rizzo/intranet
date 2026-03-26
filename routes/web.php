@@ -12,6 +12,7 @@ use App\Http\Controllers\SuccessController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\StatisticController;
 use App\Http\Controllers\AdministrativeController;
+use App\Http\Controllers\VehicleController;
 use App\Http\Controllers\ReportController;
 use App\Http\Controllers\DownloadController;
 use Illuminate\Support\Facades\Route;
@@ -36,8 +37,10 @@ Route::controller(AutocodeController::class)->group(function(){
 
 
 Route::controller(DownloadController::class)->group(function(){
-    Route::get('/download',      'index')    ->name('download.index');
-    Route::get('/download/file', 'download') ->name('download.file');
+    Route::get('/download',         'index')            ->name('download.index');
+    Route::get('/download/logo',    'download_img')     ->name('download.img');
+    Route::get('/download/server',  'download_server')  ->name('download.server');
+    Route::get('/download/vehicle', 'download_vehicle') ->name('download.vehicle');
 });
 
 
@@ -166,6 +169,17 @@ Route::middleware('auth')->group(function(){
     });
 
 
+     /* =========================================== ROTAS VIATURAS =================================================== */
+
+     Route::controller(VehicleController::class)->group(function(){
+        Route::get('/vehicle',                'index') ->name('vehicle.index');
+        Route::get('/vehicle/create',         'create')->name('vehicle.create');
+        Route::get('/vehicle/{vehicle}/edit', 'edit')  ->name('vehicle.edit');
+        Route::post('/vehicle/create',        'store') ->name('vehicle.store');
+        Route::post('/vehicle/{vehicle}',     'update')->name('vehicle.update');
+    });
+
+
 
     /* ==================================================== RELATÓRIOS ======================================================== */
 
@@ -177,6 +191,11 @@ Route::middleware('auth')->group(function(){
         Route::post('/report/administrative/sector',        'administrative_for_sector')        ->name('report.administrative_for_sector');
         Route::post('/report/administrative/search',        'administrative_search')            ->name('report.administrative_search');
         Route::get('/report/administrative/info/{id}',      'administrative_info')              ->name('report.administrative_info');
+        Route::get('/report/vehicle',                       'vehicle_index')                    ->name('report.vehicle.index');
+        Route::get('/report/vehicle/server',                'vehicle_server')                   ->name('report.vehicle.server');
+        Route::post('/report/vehicle/division',             'vehicle_division')                 ->name('report.vehicle.division');
+        Route::post('/report/vehicle/search',               'vehicle_search')                   ->name('report.vehicle.search');
+        Route::get('/report/vehicle/info/{id}',             'vehicle_info')                     ->name('report.vehicle.info');
     });
 
 

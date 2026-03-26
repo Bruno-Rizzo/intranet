@@ -43,7 +43,31 @@
                                         <span style="font-size:16px">Logotipo SSISPEN</span>
                                     </td>
                                     <td class="text-end" style="vertical-align: middle">
-                                        <a href="{{route('download.file')}}" 
+                                        <a href="{{route('download.img')}}" 
+                                            class="btn btn-info btn-sm">
+                                            <i class="far fa-hand-point-right me-1"></i> Clique para Baixar
+                                        </a>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td style="vertical-align: middle">
+                                        <span style="font-size:16px">Formulário de Cadastro de Servidor</span>
+                                    </td>
+                                    <td class="text-end" style="vertical-align: middle">
+                                        <a href="{{route('download.server')}}" 
+                                            class="btn btn-info btn-sm">
+                                            <i class="far fa-hand-point-right me-1"></i> Clique para Baixar
+                                        </a>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td style="vertical-align: middle">
+                                        <span style="font-size:16px">Formulário de Cadastro de Viatura</span>
+                                    </td>
+                                    <td class="text-end" style="vertical-align: middle">
+                                        <a href="{{route('download.vehicle')}}" 
                                             class="btn btn-info btn-sm">
                                             <i class="far fa-hand-point-right me-1"></i> Clique para Baixar
                                         </a>

@@ -98,7 +98,7 @@
                                 </div>
 
                                 <div class="mt-4 ms-3">
-                                    <h5>Marcelo Alves</h5>
+                                    <h5>Marcelo Alves da Silva</h5>
                                     Subsecretário de Inteligência
                                 </div>
                             </div>
