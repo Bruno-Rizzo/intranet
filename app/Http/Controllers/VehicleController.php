@@ -47,7 +47,7 @@ class VehicleController extends Controller
             'brand'             => 'required',
             'model'             => 'required',
             'original_plate'    => 'required',
-            'reserved_plate'    => 'required',
+            'reserved_plate'    => 'nullable',
             'kilometer'         => 'required',
             'credential_number' => 'required',
             'disclaimer'        => 'nullable',
@@ -61,20 +61,26 @@ class VehicleController extends Controller
             'credential_number.required' => 'O campo nº credencial é obrigatório',
         ]);
 
-        // Gera nome único para evitar sobrescrita
-        $originalName  = pathinfo($request->file('disclaimer')->getClientOriginalName(), PATHINFO_FILENAME);
-        $extension     = $request->file('disclaimer')->getClientOriginalExtension();
-        $uniqueName    = $originalName . '_' . uniqid() . '.' . $extension;
 
-        // Salva o arquivo em public/pdf (pasta já existe no seu projeto)
-        $request->file('disclaimer')->move(public_path('pdf'), $uniqueName);
+        // ✅ Verifica se o arquivo foi enviado antes de processá-lo
+        if ($request->hasFile('disclaimer')) {
 
-        // Substitui o objeto de arquivo pelo nome único antes de salvar no banco
-        $validated['disclaimer'] = $uniqueName;
+            // Gera nome único para evitar sobrescrita
+            $originalName  = pathinfo($request->file('disclaimer')->getClientOriginalName(), PATHINFO_FILENAME);
+            $extension     = $request->file('disclaimer')->getClientOriginalExtension();
+            $uniqueName    = $originalName . '_' . uniqid() . '.' . $extension;
 
-        Vehicle::create($validated);
-        Alert::toast('Viatura cadastrada!', 'success');
-        return to_route('vehicle.index');
+            // Salva o arquivo em public/pdf (pasta já existe no seu projeto)
+            $request->file('disclaimer')->move(public_path('pdf'), $uniqueName);
+
+            // Substitui o objeto de arquivo pelo nome único antes de salvar no banco
+            $validated['disclaimer'] = $uniqueName;
+
+         }
+
+            Vehicle::create($validated);
+            Alert::toast('Viatura cadastrada!', 'success');
+            return to_route('vehicle.index');
 
     }
 
