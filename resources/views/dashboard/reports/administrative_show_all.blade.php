@@ -100,8 +100,8 @@
     <footer>
 
         <p>
-            Polícia Penal - Praça Cristiano Ottoni, s/n Edifício D.Pedro II - 4º andar - Centro - Rio de Janeiro<br>
-            Email: s1.ssispen@seap.rj.gov
+            Subsecretaria de Inteligência da Polícia Penal<br> Rua Presidente Vargas, n 2555 - Edifício Presidente Business Center - 14º andar - Cidade Nova - Rio de Janeiro<br>
+            e-mail: s1.ssispen@ppenal.rj.gov.br
         </p>
 
     </footer>

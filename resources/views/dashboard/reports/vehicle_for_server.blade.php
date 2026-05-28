@@ -101,7 +101,7 @@
 
         <p>
             Subsecretaria de Inteligência da Polícia Penal<br> Rua Presidente Vargas, n 2555 - Edifício Presidente Business Center - 14º andar - Cidade Nova - Rio de Janeiro<br>
-            e-mail: s1.ssispen@seap.rj.gov
+            e-mail: s1.ssispen@ppenal.rj.gov.br
         </p>
 
     </footer>
